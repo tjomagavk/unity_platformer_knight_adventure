@@ -4,16 +4,16 @@ using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
     public class KeyboardPlayerMovement : IPlayerMovement {
-        private readonly float speed;
-        private readonly float jumpForce;
-        private bool enableMovement = true;
-        private bool grounded;
         private readonly Transform groundChecker;
         private readonly float groundCheckRadius;
         private readonly LayerMask groundLayerMask;
+        private readonly float jumpForce;
 
         //todo подумать, куда перенести
         private readonly SpriteRenderer playerSprite;
+        private readonly float speed;
+        private bool enableMovement = true;
+        private bool grounded;
 
         [Inject] private IPlayerAnimation playerAnimation;
 
@@ -37,23 +37,25 @@ namespace ru.tj.platformer.KnightAdventure.player {
             playerAnimation.MoveParamsUpdate(grounded, Mathf.Abs(rigidbody.velocity.x), rigidbody.velocity.y);
         }
 
-        public void Jump(Rigidbody2D rigidbody) {
-            grounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, groundLayerMask);
-            if (enableMovement && Input.GetButtonDown(AxisVars.Jump)) {
-                if (grounded) {
-                    rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                }
-            }
+        public void EnableMovement(bool enable) {
+            enableMovement = enable;
         }
 
-        public void HorizontalMovement(Rigidbody2D rigidbody) {
+        private void Jump(Rigidbody2D rigidbody) {
+            grounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, groundLayerMask);
+            if (enableMovement && Input.GetButtonDown(AxisVars.Jump))
+                if (grounded)
+                    rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        private void HorizontalMovement(Rigidbody2D rigidbody) {
             if (enableMovement) {
-                float moveX = Input.GetAxis(AxisVars.Horizontal);
+                var moveX = Input.GetAxis(AxisVars.Horizontal);
                 // todo разобраться, почему не работает с addForce
                 // Vector2 movement = new Vector2(moveX, rigidbody.position.y);
                 // rigidbody.AddForce(movement * speed);
                 //
-                Vector2 movement = Vector2.zero;
+                var movement = Vector2.zero;
                 movement.x = moveX * speed;
                 movement.y = rigidbody.velocity.y;
                 rigidbody.velocity = movement;
@@ -69,10 +71,6 @@ namespace ru.tj.platformer.KnightAdventure.player {
                     }
                 }
             }
-        }
-
-        public void EnableMovement(bool enable) {
-            enableMovement = enable;
         }
     }
 }

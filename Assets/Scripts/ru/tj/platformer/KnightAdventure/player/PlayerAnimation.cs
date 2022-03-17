@@ -9,13 +9,13 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         public void MoveParamsUpdate(bool grounded, float velocityX, float velocityY) {
-            animator.SetBool("Grounded", grounded);
-            animator.SetFloat("VelocityX", velocityX);
-            animator.SetFloat("VelocityY", velocityY);
+            animator.SetBool(PlayerAnimationVars.Grounded, grounded);
+            animator.SetFloat(PlayerAnimationVars.VelocityX, velocityX);
+            animator.SetFloat(PlayerAnimationVars.VelocityY, velocityY);
         }
 
         public void ChangeDirection() {
-            animator.SetTrigger("ChangeDirection");
+            animator.SetTrigger(PlayerAnimationVars.ChangeDirection);
         }
     }
 }

@@ -4,52 +4,52 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 595611768400834455
-    second: Flower_17x16_0
+    second: Flower Yellow_0
   - first:
       213: -4896424371278145186
-    second: Flower_17x16_1
+    second: Flower Yellow_1
   - first:
       213: -7938583460039686472
-    second: Flower_17x16_2
+    second: Flower Yellow_2
   - first:
       213: 2420931414986460966
-    second: Flower_17x16_3
+    second: Flower Yellow_3
   - first:
       213: 7252354331556644069
-    second: Flower_17x16_4
+    second: Flower Yellow_4
   - first:
       213: -1015426450024489051
-    second: Flower_17x16_5
+    second: Flower Yellow_5
   - first:
       213: 2925645786712769927
-    second: Flower_17x16_6
+    second: Flower Yellow_6
   - first:
       213: 6512144396217898375
-    second: Flower_17x16_7
+    second: Flower Yellow_7
   - first:
       213: -1280803923393558040
-    second: Flower_17x16_8
+    second: Flower Blue_0
   - first:
       213: -9094420101787774144
-    second: Flower_17x16_9
+    second: Flower Blue_1
   - first:
       213: -1414714573101569984
-    second: Flower_17x16_10
+    second: Flower Blue_2
   - first:
       213: 2423089982794545603
-    second: Flower_17x16_11
+    second: Flower Blue_3
   - first:
       213: 4899178479373995978
-    second: Flower_17x16_12
+    second: Flower Blue_4
   - first:
       213: 4960209265555873200
-    second: Flower_17x16_13
+    second: Flower Blue_05
   - first:
       213: -8353849552062847687
-    second: Flower_17x16_14
+    second: Flower Blue_6
   - first:
       213: 6692715208757646479
-    second: Flower_17x16_15
+    second: Flower Blue_7
   - first:
       213: 922906448591197443
     second: Flower_17x16_16
@@ -199,7 +199,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flower_17x16_0
+      name: Flower Yellow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_1
+      name: Flower Yellow_1
       rect:
         serializedVersion: 2
         x: 17
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_2
+      name: Flower Yellow_2
       rect:
         serializedVersion: 2
         x: 34
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_3
+      name: Flower Yellow_3
       rect:
         serializedVersion: 2
         x: 51
@@ -283,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_4
+      name: Flower Yellow_4
       rect:
         serializedVersion: 2
         x: 68
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_5
+      name: Flower Yellow_5
       rect:
         serializedVersion: 2
         x: 85
@@ -325,7 +325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_6
+      name: Flower Yellow_6
       rect:
         serializedVersion: 2
         x: 102
@@ -346,7 +346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_7
+      name: Flower Yellow_7
       rect:
         serializedVersion: 2
         x: 119
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_8
+      name: Flower Blue_0
       rect:
         serializedVersion: 2
         x: 0
@@ -388,7 +388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_9
+      name: Flower Blue_1
       rect:
         serializedVersion: 2
         x: 17
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_10
+      name: Flower Blue_2
       rect:
         serializedVersion: 2
         x: 34
@@ -430,7 +430,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_11
+      name: Flower Blue_3
       rect:
         serializedVersion: 2
         x: 51
@@ -451,7 +451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_12
+      name: Flower Blue_4
       rect:
         serializedVersion: 2
         x: 68
@@ -472,7 +472,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_13
+      name: Flower Blue_05
       rect:
         serializedVersion: 2
         x: 85
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_14
+      name: Flower Blue_6
       rect:
         serializedVersion: 2
         x: 102
@@ -514,7 +514,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_15
+      name: Flower Blue_7
       rect:
         serializedVersion: 2
         x: 119
