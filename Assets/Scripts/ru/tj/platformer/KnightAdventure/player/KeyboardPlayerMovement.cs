@@ -43,9 +43,11 @@ namespace ru.tj.platformer.KnightAdventure.player {
 
         private void Jump(Rigidbody2D rigidbody) {
             grounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, groundLayerMask);
-            if (enableMovement && Input.GetButtonDown(AxisVars.Jump))
-                if (grounded)
+            if (enableMovement && Input.GetButtonDown(AxisVars.Jump)) {
+                if (grounded) {
                     rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                }
+            }
         }
 
         private void HorizontalMovement(Rigidbody2D rigidbody) {
