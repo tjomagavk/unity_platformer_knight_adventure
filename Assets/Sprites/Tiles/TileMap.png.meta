@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8537651536920830917
-    second: TileMap_0
+    second: Ground Light Brown Top Left
   - first:
       213: 2097702617349663825
-    second: TileMap_1
+    second: Ground Light Brown Top Center
   - first:
       213: 4957045185305522080
-    second: TileMap_2
+    second: Ground Light Brown Top Right
   - first:
       213: -5641712530122005352
-    second: TileMap_3
+    second: Column Light Brown Top
   - first:
       213: -429959906181099326
     second: TileMap_4
@@ -76,16 +76,16 @@ TextureImporter:
     second: TileMap_23
   - first:
       213: 1055910621158681980
-    second: TileMap_24
+    second: Ground Light Brown Center Left
   - first:
       213: -5162037417038582772
-    second: TileMap_25
+    second: Ground Light Brown Center Center
   - first:
       213: -4676414299732812077
-    second: TileMap_26
+    second: Ground Light Brown Center Right
   - first:
       213: -5402834211872792866
-    second: TileMap_27
+    second: Column Light Brown Center
   - first:
       213: -1369627465339546951
     second: TileMap_28
@@ -148,16 +148,16 @@ TextureImporter:
     second: TileMap_47
   - first:
       213: -5933440083452931671
-    second: TileMap_48
+    second: Ground Light Brown Bottom Left
   - first:
       213: 9073687743014351539
-    second: TileMap_49
+    second: Ground Light Brown Bottom Center
   - first:
       213: -8878884047580802001
-    second: TileMap_50
+    second: Ground Light Brown Bottom Right
   - first:
       213: -3953677951791554803
-    second: TileMap_51
+    second: Column Light Brown Bottom
   - first:
       213: 1052484134827402451
     second: TileMap_52
@@ -1873,7 +1873,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileMap_0
+      name: Ground Light Brown Top Left
       rect:
         serializedVersion: 2
         x: 0
@@ -1894,7 +1894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_1
+      name: Ground Light Brown Top Center
       rect:
         serializedVersion: 2
         x: 16
@@ -1915,7 +1915,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_2
+      name: Ground Light Brown Top Right
       rect:
         serializedVersion: 2
         x: 32
@@ -1936,7 +1936,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_3
+      name: Column Light Brown Top
       rect:
         serializedVersion: 2
         x: 48
@@ -2377,7 +2377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_24
+      name: Ground Light Brown Center Left
       rect:
         serializedVersion: 2
         x: 0
@@ -2398,7 +2398,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_25
+      name: Ground Light Brown Center Center
       rect:
         serializedVersion: 2
         x: 16
@@ -2419,7 +2419,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_26
+      name: Ground Light Brown Center Right
       rect:
         serializedVersion: 2
         x: 32
@@ -2440,7 +2440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_27
+      name: Column Light Brown Center
       rect:
         serializedVersion: 2
         x: 48
@@ -2881,7 +2881,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_48
+      name: Ground Light Brown Bottom Left
       rect:
         serializedVersion: 2
         x: 0
@@ -2902,7 +2902,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_49
+      name: Ground Light Brown Bottom Center
       rect:
         serializedVersion: 2
         x: 16
@@ -2923,7 +2923,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_50
+      name: Ground Light Brown Bottom Right
       rect:
         serializedVersion: 2
         x: 32
@@ -2944,7 +2944,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_51
+      name: Column Light Brown Bottom
       rect:
         serializedVersion: 2
         x: 48

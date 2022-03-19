@@ -52,52 +52,52 @@ TextureImporter:
     second: Flower Blue_7
   - first:
       213: 922906448591197443
-    second: Flower_17x16_16
+    second: Flower Brown_0
   - first:
       213: 4550879141585947951
-    second: Flower_17x16_17
+    second: Flower Brown_1
   - first:
       213: 1157277784924313933
-    second: Flower_17x16_18
+    second: Flower Brown_2
   - first:
       213: 3458384282409310317
-    second: Flower_17x16_19
+    second: Flower Brown_3
   - first:
       213: 5429601869302446193
-    second: Flower_17x16_20
+    second: Flower Brown_4
   - first:
       213: -5676749392402617313
-    second: Flower_17x16_21
+    second: Flower Brown_5
   - first:
       213: 8910165992968837199
-    second: Flower_17x16_22
+    second: Flower Brown_6
   - first:
       213: 4955494910037737495
-    second: Flower_17x16_23
+    second: Flower Brown_7
   - first:
       213: 4063137077215403247
-    second: Flower_17x16_24
+    second: Flower Dark_0
   - first:
       213: 3042095975894706874
-    second: Flower_17x16_25
+    second: Flower Dark_1
   - first:
       213: -1997882147994581151
-    second: Flower_17x16_26
+    second: Flower Dark_2
   - first:
       213: -6180692275742644765
-    second: Flower_17x16_27
+    second: Flower Dark_3
   - first:
       213: 2958704999976576989
-    second: Flower_17x16_28
+    second: Flower Dark_4
   - first:
       213: 4248089141182084636
-    second: Flower_17x16_29
+    second: Flower Dark_5
   - first:
       213: -5494973911693774414
-    second: Flower_17x16_30
+    second: Flower Dark_6
   - first:
       213: -3028151048056936730
-    second: Flower_17x16_31
+    second: Flower Dark_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -535,7 +535,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_16
+      name: Flower Brown_0
       rect:
         serializedVersion: 2
         x: 0
@@ -556,7 +556,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_17
+      name: Flower Brown_1
       rect:
         serializedVersion: 2
         x: 17
@@ -577,7 +577,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_18
+      name: Flower Brown_2
       rect:
         serializedVersion: 2
         x: 34
@@ -598,7 +598,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_19
+      name: Flower Brown_3
       rect:
         serializedVersion: 2
         x: 51
@@ -619,7 +619,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_20
+      name: Flower Brown_4
       rect:
         serializedVersion: 2
         x: 68
@@ -640,7 +640,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_21
+      name: Flower Brown_5
       rect:
         serializedVersion: 2
         x: 85
@@ -661,7 +661,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_22
+      name: Flower Brown_6
       rect:
         serializedVersion: 2
         x: 102
@@ -682,7 +682,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_23
+      name: Flower Brown_7
       rect:
         serializedVersion: 2
         x: 119
@@ -703,7 +703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_24
+      name: Flower Dark_0
       rect:
         serializedVersion: 2
         x: 0
@@ -724,7 +724,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_25
+      name: Flower Dark_1
       rect:
         serializedVersion: 2
         x: 17
@@ -745,7 +745,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_26
+      name: Flower Dark_2
       rect:
         serializedVersion: 2
         x: 34
@@ -766,7 +766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_27
+      name: Flower Dark_3
       rect:
         serializedVersion: 2
         x: 51
@@ -787,7 +787,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_28
+      name: Flower Dark_4
       rect:
         serializedVersion: 2
         x: 68
@@ -808,7 +808,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_29
+      name: Flower Dark_5
       rect:
         serializedVersion: 2
         x: 85
@@ -829,7 +829,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_30
+      name: Flower Dark_6
       rect:
         serializedVersion: 2
         x: 102
@@ -850,7 +850,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_17x16_31
+      name: Flower Dark_7
       rect:
         serializedVersion: 2
         x: 119

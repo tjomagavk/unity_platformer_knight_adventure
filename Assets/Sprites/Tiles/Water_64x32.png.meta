@@ -28,28 +28,28 @@ TextureImporter:
     second: Water_64x32_7
   - first:
       213: 5046039877347537740
-    second: Water_64x32_8
+    second: Water_Dark_64x32_0
   - first:
       213: 6169858931189919328
-    second: Water_64x32_9
+    second: Water_Dark_64x32_1
   - first:
       213: 8613040694749282231
-    second: Water_64x32_10
+    second: Water_Dark_64x32_2
   - first:
       213: -4473009856132034309
-    second: Water_64x32_11
+    second: Water_Dark_64x32_3
   - first:
       213: 3061493215266109523
-    second: Water_64x32_12
+    second: Water_Dark_64x32_4
   - first:
       213: -3419398036796008390
-    second: Water_64x32_13
+    second: Water_Dark_64x32_5
   - first:
       213: 4507550311995960721
-    second: Water_64x32_14
+    second: Water_Dark_64x32_6
   - first:
       213: -6984070429256010604
-    second: Water_64x32_15
+    second: Water_Dark_64x32_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -91,7 +91,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -319,7 +319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_8
+      name: Water_Dark_64x32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -340,7 +340,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_9
+      name: Water_Dark_64x32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_10
+      name: Water_Dark_64x32_2
       rect:
         serializedVersion: 2
         x: 64
@@ -382,7 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_11
+      name: Water_Dark_64x32_3
       rect:
         serializedVersion: 2
         x: 96
@@ -403,7 +403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_12
+      name: Water_Dark_64x32_4
       rect:
         serializedVersion: 2
         x: 128
@@ -424,7 +424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_13
+      name: Water_Dark_64x32_5
       rect:
         serializedVersion: 2
         x: 160
@@ -445,7 +445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_14
+      name: Water_Dark_64x32_6
       rect:
         serializedVersion: 2
         x: 192
@@ -466,7 +466,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_64x32_15
+      name: Water_Dark_64x32_7
       rect:
         serializedVersion: 2
         x: 224

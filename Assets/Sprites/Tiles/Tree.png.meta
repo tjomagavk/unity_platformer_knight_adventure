@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6853316077166303748
-    second: Tree_0
+    second: Tree Light 0
   - first:
       213: 4134985361545656292
-    second: Tree_1
+    second: Bush Light 0
   - first:
       213: -1566730818833404899
-    second: Tree_2
+    second: Bush Light 1
   - first:
       213: -7301469273254094464
-    second: Tree_3
+    second: Tree Light 1
   - first:
       213: 4246777929600769233
-    second: Tree_4
+    second: Bush Light 2
   - first:
       213: -1089773682390131457
-    second: Tree_5
+    second: Bush Light 3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_0
+      name: Tree Light 0
       rect:
         serializedVersion: 2
         x: 4
@@ -142,7 +142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_1
+      name: Bush Light 0
       rect:
         serializedVersion: 2
         x: 76
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_2
+      name: Bush Light 1
       rect:
         serializedVersion: 2
         x: 112
@@ -184,7 +184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_3
+      name: Tree Light 1
       rect:
         serializedVersion: 2
         x: 48
@@ -205,7 +205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_4
+      name: Bush Light 2
       rect:
         serializedVersion: 2
         x: 83
@@ -226,7 +226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_5
+      name: Bush Light 3
       rect:
         serializedVersion: 2
         x: 114
