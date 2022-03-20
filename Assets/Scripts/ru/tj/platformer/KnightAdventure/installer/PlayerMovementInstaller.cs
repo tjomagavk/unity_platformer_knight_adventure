@@ -4,24 +4,39 @@ using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.installer {
     public class PlayerMovementInstaller : MonoInstaller {
-        [SerializeField, Range(0, 100)] private float speed = 50f;
-        [SerializeField, Range(0, 100)] private float jumpForce = 50f;
-        [SerializeField] private Transform groundChecker;
+        [Header("Movement speed")]
+        [SerializeField, Range(0, 100)]
+        private float speed = 5f;
+
+        [SerializeField] private AnimationCurve speedCurve;
+        [SerializeField, Range(0, 100)] private float jumpForce = 15f;
+
+        [Header("Grounded checker settings")]
+        [SerializeField]
+        private Transform groundChecker;
+
         [SerializeField, Range(0, 10)] private float groundCheckRadius = 0.1f;
         [SerializeField] private LayerMask groundLayerMask;
-        [SerializeField] private SpriteRenderer playerSprite;
+
+        [Header("Other settings")]
+        [SerializeField]
+        private SpriteRenderer playerSprite;
 
         public override void InstallBindings() {
-            Container.Bind<IPlayerMovement>()
-                     .To<KeyboardPlayerMovement>()
+            Container.Bind<IPlayerInput>()
+                     .To<KeyboardPlayerInput>()
                      .FromNew()
                      .AsSingle()
-                     .WithArguments(
-                                    speed,
+                     .NonLazy();
+
+            Container.Bind<IPlayerMovement>()
+                     .To<PlayerMovement>()
+                     .FromNew()
+                     .AsSingle()
+                     .WithArguments(speed,
+                                    speedCurve,
                                     jumpForce,
-                                    groundChecker,
-                                    groundCheckRadius,
-                                    groundLayerMask,
+                                    new GroundChecker(groundChecker, groundCheckRadius, groundLayerMask),
                                     playerSprite)
                      .NonLazy();
         }

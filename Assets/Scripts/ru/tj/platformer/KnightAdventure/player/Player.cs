@@ -1,12 +1,17 @@
+using ru.tj.platformer.KnightAdventure.unit;
 using UnityEngine;
 using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(
+                         typeof(Rigidbody2D),
+                         typeof(IHealth)
+                     )]
     public class Player : MonoBehaviour {
+        private IHealth health;
         private IPlayerMovement playerMovement;
 
-        private Rigidbody2D rigidbody2D;
+        private Rigidbody2D rb;
 
         [Inject]
         private void Construct(IPlayerMovement playerMovement) {
@@ -14,11 +19,11 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         void Awake() {
-            rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
         }
 
         void Update() {
-            playerMovement.Move(rigidbody2D);
+            playerMovement.Move(rb);
         }
     }
 }

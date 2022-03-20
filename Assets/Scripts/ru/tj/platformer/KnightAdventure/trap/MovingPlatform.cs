@@ -7,7 +7,7 @@ namespace ru.tj.platformer.KnightAdventure.trap {
         private SliderJoint2D sliderJoint;
 
         private void Awake() {
-            sliderJoint = gameObject.GetComponent<SliderJoint2D>();
+            sliderJoint = GetComponent<SliderJoint2D>();
         }
 
         private void OnTriggerEnter2D(Collider2D other) {

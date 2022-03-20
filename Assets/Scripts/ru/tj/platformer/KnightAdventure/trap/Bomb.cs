@@ -11,7 +11,7 @@ namespace ru.tj.platformer.KnightAdventure.trap {
         [SerializeField] private PointEffector2D boomPointEffector;
 
         private void Awake() {
-            animator = gameObject.GetComponent<Animator>();
+            animator = GetComponent<Animator>();
             boomPointEffector.enabled = false;
         }
 

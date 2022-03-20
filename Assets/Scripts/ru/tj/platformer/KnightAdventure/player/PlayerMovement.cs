@@ -3,31 +3,29 @@ using UnityEngine;
 using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
-    public class KeyboardPlayerMovement : IPlayerMovement {
-        private readonly Transform groundChecker;
-        private readonly float groundCheckRadius;
-        private readonly LayerMask groundLayerMask;
+    public class PlayerMovement : IPlayerMovement {
+        private readonly GroundChecker groundChecker;
         private readonly float jumpForce;
+        private readonly float speed;
+        private readonly AnimationCurve speedCurve;
 
         //todo подумать, куда перенести
         private readonly SpriteRenderer playerSprite;
-        private readonly float speed;
         private bool enableMovement = true;
         private bool grounded;
 
         [Inject] private IPlayerAnimation playerAnimation;
+        [Inject] private IPlayerInput playerInput;
 
-        public KeyboardPlayerMovement(float speed,
-                                      float jumpForce,
-                                      Transform groundChecker,
-                                      float groundCheckRadius,
-                                      LayerMask groundLayerMask,
-                                      SpriteRenderer playerSprite) {
+        public PlayerMovement(float speed,
+                              AnimationCurve speedCurve,
+                              float jumpForce,
+                              GroundChecker groundChecker,
+                              SpriteRenderer playerSprite) {
             this.speed = speed;
+            this.speedCurve = speedCurve;
             this.jumpForce = jumpForce;
             this.groundChecker = groundChecker;
-            this.groundCheckRadius = groundCheckRadius;
-            this.groundLayerMask = groundLayerMask;
             this.playerSprite = playerSprite;
         }
 
@@ -42,8 +40,8 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         private void Jump(Rigidbody2D rigidbody) {
-            grounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, groundLayerMask);
-            if (enableMovement && Input.GetButtonDown(AxisVars.Jump)) {
+            grounded = groundChecker.IsGrounded();
+            if (enableMovement && playerInput.jump()) {
                 if (grounded) {
                     rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 }
@@ -52,13 +50,13 @@ namespace ru.tj.platformer.KnightAdventure.player {
 
         private void HorizontalMovement(Rigidbody2D rigidbody) {
             if (enableMovement) {
-                var moveX = Input.GetAxis(AxisVars.Horizontal);
+                var moveX = playerInput.horizontal();
                 // todo разобраться, почему не работает с addForce
                 // Vector2 movement = new Vector2(moveX, rigidbody.position.y);
                 // rigidbody.AddForce(movement * speed);
                 //
                 var movement = Vector2.zero;
-                movement.x = moveX * speed;
+                movement.x = speedCurve.Evaluate(moveX) * speed;
                 movement.y = rigidbody.velocity.y;
                 rigidbody.velocity = movement;
                 if (moveX > 0) {
