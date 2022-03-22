@@ -4,9 +4,18 @@ using UnityEngine;
 namespace ru.tj.platformer.KnightAdventure.unit {
     [RequireComponent(typeof(Rigidbody2D))]
     public class UnitData : MonoBehaviour {
-        private const string ChangeDirectionAnim = "ChangeDirection";
-        private Rigidbody2D rb;
         private GroundChecker groundChecker;
+
+        public Rigidbody2D Rb { get; private set; }
+
+        public IUnitAnimation UnitAnimation { get; private set; }
+
+        [Header("Damage areas")]
+        [SerializeField]
+        private Collider2D damageArea;
+
+        [SerializeField] private Collider2D damageAreaJump;
+
 
         [Header("Grounded checker settings")]
         [SerializeField]
@@ -19,15 +28,14 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         [SerializeField]
         private Animator animator;
 
-        [SerializeField]
-        private SpriteRenderer sprite;
+        [SerializeField] private SpriteRenderer sprite;
 
         private void Awake() {
-            rb = GetComponent<Rigidbody2D>();
+            Rb = GetComponent<Rigidbody2D>();
             groundChecker = new GroundChecker(groundPoint, groundCheckRadius, groundLayerMask);
+            UnitAnimation = new UnitAnimation(animator);
         }
 
-        public Rigidbody2D Rb => rb;
 
         public bool OnGrounded() {
             return groundChecker.IsGrounded();
@@ -36,7 +44,6 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public void FlipX(bool flip) {
             if (sprite.flipX != flip) {
                 sprite.flipX = flip;
-                animator.SetTrigger(ChangeDirectionAnim);
             }
         }
 

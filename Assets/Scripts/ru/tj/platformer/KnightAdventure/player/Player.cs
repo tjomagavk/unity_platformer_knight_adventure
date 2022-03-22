@@ -12,7 +12,6 @@ namespace ru.tj.platformer.KnightAdventure.player {
 
         [Inject] private IPlayerMovement playerMovement;
         [Inject] private IPlayerInput playerInput;
-        [Inject] private IPlayerAnimation playerAnimation;
 
         private void Awake() {
             unit.transform.position = transform.position;
@@ -21,7 +20,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
         void Update() {
             playerMovement.Move(unit);
             if (playerInput.SimpleAttack()) {
-                playerAnimation.SimpleAttack();
+                unit.UnitAnimation.SimpleAttack();
             }
         }
     }

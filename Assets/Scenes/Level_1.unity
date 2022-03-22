@@ -3333,7 +3333,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343964239}
-  - component: {fileID: 1343964241}
   - component: {fileID: 1343964240}
   m_Layer: 0
   m_Name: PlayerInstaller
@@ -3403,20 +3402,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   jumpForce: 30
-  playerSprite: {fileID: 1415555271}
---- !u!114 &1343964241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343964238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc33ae103e343488845196a731983d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 1415555270}
 --- !u!1 &1345694645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,16 +3496,6 @@ PrefabInstance:
 --- !u!4 &1374060076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1196824971110057038, guid: cd7ce8f14cfd9aa4fb0a26c29c276ef7, type: 3}
-  m_PrefabInstance: {fileID: 1196824969757293154}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1415555270 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8819692589440560148, guid: cd7ce8f14cfd9aa4fb0a26c29c276ef7, type: 3}
-  m_PrefabInstance: {fileID: 1196824969757293154}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1415555271 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 9102772232038827994, guid: cd7ce8f14cfd9aa4fb0a26c29c276ef7, type: 3}
   m_PrefabInstance: {fileID: 1196824969757293154}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1444155898
@@ -4245,7 +4220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 1343964241}
   - {fileID: 1343964240}
   _installerPrefabs: []
   _autoRun: 1

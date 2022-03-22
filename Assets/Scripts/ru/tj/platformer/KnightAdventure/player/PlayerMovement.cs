@@ -11,7 +11,6 @@ namespace ru.tj.platformer.KnightAdventure.player {
         private bool enableMovement = true;
         private bool grounded;
 
-        [Inject] private IPlayerAnimation playerAnimation;
         [Inject] private IPlayerInput playerInput;
 
         public PlayerMovement(float speed, AnimationCurve speedCurve, float jumpForce) {
@@ -23,7 +22,9 @@ namespace ru.tj.platformer.KnightAdventure.player {
         public void Move(UnitData unitData) {
             Jump(unitData);
             HorizontalMovement(unitData);
-            playerAnimation.MoveParamsUpdate(grounded, Mathf.Abs(unitData.Rb.velocity.x), unitData.Rb.velocity.y);
+            unitData.UnitAnimation.MoveParamsUpdate(grounded,
+                                                    Mathf.Abs(unitData.Rb.velocity.x),
+                                                    unitData.Rb.velocity.y);
         }
 
         public void EnableMovement(bool enable) {
@@ -52,7 +53,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
                 unitData.Rb.velocity = movement;
                 if (moveX > 0) {
                     unitData.FlipX(false);
-                    //playerAnimation.ChangeDirection();
+                    unitData.UnitAnimation.ChangeDirection();
                 } else if (moveX < 0) {
                     unitData.FlipX(true);
                     //playerAnimation.ChangeDirection();
