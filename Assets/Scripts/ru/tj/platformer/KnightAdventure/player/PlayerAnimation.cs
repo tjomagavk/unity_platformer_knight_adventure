@@ -3,6 +3,7 @@
 namespace ru.tj.platformer.KnightAdventure.player {
     public class PlayerAnimation : IPlayerAnimation {
         private Animator animator;
+        private bool attackLeft;
 
         public PlayerAnimation(Animator animator) {
             this.animator = animator;
@@ -14,8 +15,11 @@ namespace ru.tj.platformer.KnightAdventure.player {
             animator.SetFloat(PlayerAnimationVars.VelocityY, velocityY);
         }
 
-        public void ChangeDirection() {
-            animator.SetTrigger(PlayerAnimationVars.ChangeDirection);
+        public void SimpleAttack() {
+            animator.SetTrigger(PlayerAnimationVars.AttackTrigger);
+            animator.SetTrigger(PlayerAnimationVars.AttackSimple);
+            animator.SetBool(PlayerAnimationVars.AttackLeft, attackLeft);
+            attackLeft = !attackLeft;
         }
     }
 }

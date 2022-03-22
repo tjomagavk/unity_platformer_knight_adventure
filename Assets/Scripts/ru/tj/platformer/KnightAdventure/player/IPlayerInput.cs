@@ -1,9 +1,9 @@
-using UnityEngine;
-
 namespace ru.tj.platformer.KnightAdventure.player {
     public interface IPlayerInput {
-        float horizontal();
+        float Horizontal();
 
-        bool jump();
+        bool Jump();
+
+        bool SimpleAttack();
     }
 }

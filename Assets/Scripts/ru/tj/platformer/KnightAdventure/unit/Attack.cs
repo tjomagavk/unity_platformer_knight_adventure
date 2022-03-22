@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.unit {
-    public class Health : MonoBehaviour, IHealth {
-        [SerializeField] private int maxHealth;
+    public class Attack : MonoBehaviour {
+        [SerializeField] private float powerAttack;
+        [SerializeField] private GameObject damageDealer;
+        [SerializeField] private bool isMilliAttack;
         private int currentHealth;
         private bool alive;
 
         private void Awake() {
-            currentHealth = maxHealth;
+            // currentHealth = maxHealth;
             alive = true;
         }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using ru.tj.platformer.KnightAdventure.constant;
 using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.trap {

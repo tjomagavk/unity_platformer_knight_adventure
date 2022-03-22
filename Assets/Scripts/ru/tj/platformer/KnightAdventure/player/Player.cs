@@ -4,26 +4,25 @@ using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
     [RequireComponent(
-                         typeof(Rigidbody2D),
                          typeof(IHealth)
                      )]
     public class Player : MonoBehaviour {
         private IHealth health;
-        private IPlayerMovement playerMovement;
+        [SerializeField] private UnitData unit;
 
-        private Rigidbody2D rb;
+        [Inject] private IPlayerMovement playerMovement;
+        [Inject] private IPlayerInput playerInput;
+        [Inject] private IPlayerAnimation playerAnimation;
 
-        [Inject]
-        private void Construct(IPlayerMovement playerMovement) {
-            this.playerMovement = playerMovement;
-        }
-
-        void Awake() {
-            rb = GetComponent<Rigidbody2D>();
+        private void Awake() {
+            unit.transform.position = transform.position;
         }
 
         void Update() {
-            playerMovement.Move(rb);
+            playerMovement.Move(unit);
+            if (playerInput.SimpleAttack()) {
+                playerAnimation.SimpleAttack();
+            }
         }
     }
 }
