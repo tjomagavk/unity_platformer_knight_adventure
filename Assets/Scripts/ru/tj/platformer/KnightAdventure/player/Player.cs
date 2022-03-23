@@ -20,7 +20,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
         void Update() {
             playerMovement.Move(unit);
             if (playerInput.SimpleAttack()) {
-                unit.UnitAnimation.SimpleAttack();
+                unit.SimpleAttack();
             }
         }
     }

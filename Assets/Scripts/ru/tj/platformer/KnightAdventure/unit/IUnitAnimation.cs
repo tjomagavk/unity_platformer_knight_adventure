@@ -4,6 +4,6 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         void ChangeDirection();
 
-        void SimpleAttack();
+        void SimpleAttack(bool attackLeft);
     }
 }

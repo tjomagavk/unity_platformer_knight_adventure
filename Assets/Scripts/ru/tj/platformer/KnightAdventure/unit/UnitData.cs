@@ -2,13 +2,13 @@
 using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.unit {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
     public class UnitData : MonoBehaviour {
         private GroundChecker groundChecker;
 
         public Rigidbody2D Rb { get; private set; }
-
         public IUnitAnimation UnitAnimation { get; private set; }
+        private bool attackLeft;
 
         [Header("Damage areas")]
         [SerializeField]
@@ -26,14 +26,13 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         [Header("Other settings")]
         [SerializeField]
-        private Animator animator;
-
-        [SerializeField] private SpriteRenderer sprite;
+        private SpriteRenderer sprite;
 
         private void Awake() {
             Rb = GetComponent<Rigidbody2D>();
             groundChecker = new GroundChecker(groundPoint, groundCheckRadius, groundLayerMask);
-            UnitAnimation = new UnitAnimation(animator);
+            UnitAnimation = new UnitAnimation(GetComponent<Animator>());
+            attackLeft = false;
         }
 
 
@@ -44,7 +43,13 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public void FlipX(bool flip) {
             if (sprite.flipX != flip) {
                 sprite.flipX = flip;
+                UnitAnimation.ChangeDirection();
             }
+        }
+
+        public void SimpleAttack() {
+            UnitAnimation.SimpleAttack(attackLeft);
+            attackLeft = !attackLeft;
         }
 
 #if UNITY_EDITOR

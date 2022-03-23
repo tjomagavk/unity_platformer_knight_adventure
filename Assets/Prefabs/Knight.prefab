@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6844975742279782431}
   - component: {fileID: 7266336133073847229}
   - component: {fileID: 8680710809110080973}
+  - component: {fileID: 3569356557943776291}
   m_Layer: 6
   m_Name: Knight
   m_TagString: Untagged
@@ -93,8 +94,27 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  animator: {fileID: 8819692589440560148}
+  animator: {fileID: 0}
   sprite: {fileID: 9102772232038827994}
+--- !u!95 &3569356557943776291
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196824971110057033}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18b0ce1e0b4875f49b7e0356710cee3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4051832971177833737
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +284,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5777963259030245791}
   - component: {fileID: 9102772232038827994}
-  - component: {fileID: 8819692589440560148}
   m_Layer: 6
   m_Name: Knight
   m_TagString: Untagged
@@ -337,22 +356,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8819692589440560148
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9188291588684540228}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18b0ce1e0b4875f49b7e0356710cee3d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

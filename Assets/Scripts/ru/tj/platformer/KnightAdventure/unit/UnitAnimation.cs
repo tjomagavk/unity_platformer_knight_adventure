@@ -3,7 +3,6 @@
 namespace ru.tj.platformer.KnightAdventure.unit {
     public class UnitAnimation : IUnitAnimation {
         private Animator animator;
-        private bool attackLeft;
 
         public UnitAnimation(Animator animator) {
             this.animator = animator;
@@ -19,11 +18,10 @@ namespace ru.tj.platformer.KnightAdventure.unit {
             animator.SetTrigger(UnitAnimationVars.ChangeDirection);
         }
 
-        public void SimpleAttack() {
+        public void SimpleAttack(bool attackLeft) {
             animator.SetTrigger(UnitAnimationVars.AttackTrigger);
             animator.SetTrigger(UnitAnimationVars.AttackSimple);
             animator.SetBool(UnitAnimationVars.AttackLeft, attackLeft);
-            attackLeft = !attackLeft;
         }
     }
 }

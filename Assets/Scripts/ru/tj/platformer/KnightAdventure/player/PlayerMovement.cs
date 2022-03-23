@@ -53,10 +53,8 @@ namespace ru.tj.platformer.KnightAdventure.player {
                 unitData.Rb.velocity = movement;
                 if (moveX > 0) {
                     unitData.FlipX(false);
-                    unitData.UnitAnimation.ChangeDirection();
                 } else if (moveX < 0) {
                     unitData.FlipX(true);
-                    //playerAnimation.ChangeDirection();
                 }
             }
         }

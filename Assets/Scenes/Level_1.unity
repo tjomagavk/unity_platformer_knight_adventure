@@ -5640,6 +5640,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 9188291588684540228, guid: cd7ce8f14cfd9aa4fb0a26c29c276ef7, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7ce8f14cfd9aa4fb0a26c29c276ef7, type: 3}
 --- !u!114 &1196824969757293155 stripped
