@@ -1,19 +1,23 @@
 ﻿using ru.tj.platformer.KnightAdventure.unit;
-using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.player {
-    public class PlayerHealth : MonoBehaviour, IHealth {
-        [SerializeField] private int maxHealth;
+    public class PlayerHealth : IHealth {
+        private readonly int maxHealth;
         private int currentHealth;
         private bool alive;
 
-        private void Awake() {
-            currentHealth = maxHealth;
+        public PlayerHealth(int maxHealth, int currentHealth) {
+            this.maxHealth = maxHealth;
+            this.currentHealth = currentHealth;
             alive = true;
         }
 
         public int MaxHealth() {
             return maxHealth;
+        }
+
+        public int CurrentHealth() {
+            return currentHealth;
         }
 
         public void TakeDamage(int damage) {

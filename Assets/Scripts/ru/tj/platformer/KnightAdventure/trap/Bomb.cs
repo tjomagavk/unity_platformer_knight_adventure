@@ -3,7 +3,7 @@ using UnityEngine;
 namespace ru.tj.platformer.KnightAdventure.trap {
     [RequireComponent(typeof(Animator))]
     public class Bomb : MonoBehaviour {
-        public const string Boom = "BoomTrigger";
+        private readonly string Boom = "BoomTrigger";
 
         private Animator animator;
         [SerializeField] private PointEffector2D boomPointEffector;

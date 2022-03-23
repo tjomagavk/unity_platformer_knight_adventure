@@ -4,19 +4,18 @@ using UnityEngine;
 using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
-    [RequireComponent(typeof(IHealth))]
     public class Player : MonoBehaviour {
-        private IHealth health;
         [SerializeField] private UnitData unit;
         [SerializeField] private HealthPanel healthPanel;
 
         [Inject] private IPlayerMovement playerMovement;
         [Inject] private IPlayerInput playerInput;
+        [Inject] private IHealth playerHealth;
 
         private void Awake() {
             unit.transform.position = transform.position;
-            health = GetComponent<IHealth>();
-            healthPanel.SetMaxHealth(health.MaxHealth());
+            healthPanel.SetMaxHealth(playerHealth.MaxHealth());
+            healthPanel.SetCurrentHealth(playerHealth.CurrentHealth());
         }
 
         void Update() {

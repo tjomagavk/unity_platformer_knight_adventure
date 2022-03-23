@@ -15,6 +15,10 @@ namespace ru.tj.platformer.KnightAdventure.unit {
             return maxHealth;
         }
 
+        public int CurrentHealth() {
+            return currentHealth;
+        }
+
         public void TakeDamage(int damage) {
             currentHealth -= damage;
             alive = currentHealth <= 0;
