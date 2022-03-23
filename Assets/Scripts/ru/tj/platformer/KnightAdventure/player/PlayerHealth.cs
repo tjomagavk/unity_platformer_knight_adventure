@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using ru.tj.platformer.KnightAdventure.unit;
+using UnityEngine;
 
-namespace ru.tj.platformer.KnightAdventure.unit {
-    public class Health : MonoBehaviour, IHealth {
+namespace ru.tj.platformer.KnightAdventure.player {
+    public class PlayerHealth : MonoBehaviour, IHealth {
         [SerializeField] private int maxHealth;
         private int currentHealth;
         private bool alive;
