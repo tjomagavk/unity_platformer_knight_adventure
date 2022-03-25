@@ -1,4 +1,5 @@
 ﻿using ru.tj.platformer.KnightAdventure.unit;
+using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.player {
     public class PlayerHealth : IHealth {
@@ -21,6 +22,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         public void TakeDamage(int damage) {
+            Debug.Log("Damage!!!");
             currentHealth -= damage;
             alive = currentHealth <= 0;
         }

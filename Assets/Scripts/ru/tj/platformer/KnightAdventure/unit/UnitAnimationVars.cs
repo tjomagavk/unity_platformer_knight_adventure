@@ -7,5 +7,6 @@
         public const string AttackLeft = "AttackLeft";
         public const string AttackTrigger = "AttackTrigger";
         public const string AttackSimple = "AttackSimple";
+        public const string DamageTrigger = "DamageTrigger";
     }
 }

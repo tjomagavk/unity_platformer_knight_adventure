@@ -23,5 +23,9 @@ namespace ru.tj.platformer.KnightAdventure.unit {
             animator.SetTrigger(UnitAnimationVars.AttackSimple);
             animator.SetBool(UnitAnimationVars.AttackLeft, attackLeft);
         }
+
+        public void TakeDamage() {
+            animator.SetTrigger(UnitAnimationVars.DamageTrigger);
+        }
     }
 }

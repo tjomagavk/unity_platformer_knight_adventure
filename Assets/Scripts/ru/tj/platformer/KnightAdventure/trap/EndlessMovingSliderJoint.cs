@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.trap {
     [RequireComponent(typeof(SliderJoint2D))]
-    public class MovingPlatform : MonoBehaviour {
+    public class EndlessMovingSliderJoint : MonoBehaviour {
         private SliderJoint2D sliderJoint;
 
         private void Awake() {

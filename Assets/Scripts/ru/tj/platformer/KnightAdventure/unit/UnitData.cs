@@ -6,6 +6,7 @@ namespace ru.tj.platformer.KnightAdventure.unit {
     public class UnitData : MonoBehaviour {
         private GroundChecker groundChecker;
 
+        public IHealth Health { get; set; }
         public Rigidbody2D Rb { get; private set; }
         public IUnitAnimation UnitAnimation { get; private set; }
         private bool attackLeft;
@@ -50,6 +51,11 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public void SimpleAttack() {
             UnitAnimation.SimpleAttack(attackLeft);
             attackLeft = !attackLeft;
+        }
+
+        public void TakeDamage(int damage) {
+            Health.TakeDamage(damage);
+            UnitAnimation.TakeDamage();
         }
 
 #if UNITY_EDITOR

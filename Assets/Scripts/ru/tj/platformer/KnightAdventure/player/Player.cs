@@ -16,6 +16,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
             unit.transform.position = transform.position;
             healthPanel.SetMaxHealth(playerHealth.MaxHealth());
             healthPanel.SetCurrentHealth(playerHealth.CurrentHealth());
+            unit.Health = playerHealth;
         }
 
         void Update() {

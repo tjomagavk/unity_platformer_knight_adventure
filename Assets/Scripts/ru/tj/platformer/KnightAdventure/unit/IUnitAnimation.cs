@@ -5,5 +5,7 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         void ChangeDirection();
 
         void SimpleAttack(bool attackLeft);
+
+        void TakeDamage();
     }
 }
