@@ -1,4 +1,5 @@
-﻿using ru.tj.platformer.KnightAdventure.unit;
+﻿using ru.tj.platformer.KnightAdventure.ui;
+using ru.tj.platformer.KnightAdventure.unit;
 using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.player {
@@ -6,11 +7,15 @@ namespace ru.tj.platformer.KnightAdventure.player {
         private readonly int maxHealth;
         private int currentHealth;
         private bool alive;
+        private HealthPanel healthPanel;
 
-        public PlayerHealth(int maxHealth, int currentHealth) {
+        public PlayerHealth(int maxHealth, int currentHealth, HealthPanel healthPanel) {
             this.maxHealth = maxHealth;
             this.currentHealth = currentHealth;
+            this.healthPanel = healthPanel;
             alive = true;
+            this.healthPanel.SetMaxHealth(this.maxHealth);
+            this.healthPanel.SetCurrentHealth(this.currentHealth);
         }
 
         public int MaxHealth() {
@@ -25,6 +30,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
             Debug.Log("Damage!!!");
             currentHealth -= damage;
             alive = currentHealth <= 0;
+            healthPanel.ChangeHealth(-damage);
         }
 
         public bool IsAlive() {

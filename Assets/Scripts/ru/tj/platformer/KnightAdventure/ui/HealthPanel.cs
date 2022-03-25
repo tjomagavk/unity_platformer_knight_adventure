@@ -26,7 +26,6 @@ namespace ru.tj.platformer.KnightAdventure.ui {
                         count--;
                     }
                 }
-                
             }
         }
 
@@ -38,7 +37,7 @@ namespace ru.tj.platformer.KnightAdventure.ui {
 
         public void ChangeHealth(int count) {
             if (count < 0) {
-                for (int i = icons.Count - 1; i >= 0; i--) {
+                for (int i = 0; i < icons.Count; i++) {
                     if (icons[i].IsEnable()) {
                         icons[i].Disable();
                         count++;
@@ -51,7 +50,7 @@ namespace ru.tj.platformer.KnightAdventure.ui {
             }
 
             if (count > 0) {
-                for (int i = 0; i <= icons.Count; i++) {
+                for (int i = icons.Count - 1; i >= 0; i--) {
                     if (!icons[i].IsEnable()) {
                         icons[i].Enable();
                         count--;
