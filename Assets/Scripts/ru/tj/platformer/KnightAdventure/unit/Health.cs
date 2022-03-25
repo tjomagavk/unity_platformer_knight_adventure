@@ -3,29 +3,30 @@
 namespace ru.tj.platformer.KnightAdventure.unit {
     public class Health : MonoBehaviour, IHealth {
         [SerializeField] private int maxHealth;
-        private int currentHealth;
-        private bool alive;
+        private BaseHealth baseHealth;
 
         private void Awake() {
-            currentHealth = maxHealth;
-            alive = true;
+            baseHealth = new BaseHealth(maxHealth, maxHealth);
         }
 
         public int MaxHealth() {
-            return maxHealth;
+            return baseHealth.MaxHealth();
+        }
+
+        public void AddMaxHealth(int count) {
+            baseHealth.AddMaxHealth(count);
         }
 
         public int CurrentHealth() {
-            return currentHealth;
+            return baseHealth.CurrentHealth();
         }
 
         public void TakeDamage(int damage) {
-            currentHealth -= damage;
-            alive = currentHealth <= 0;
+            baseHealth.TakeDamage(damage);
         }
 
         public bool IsAlive() {
-            return alive;
+            return baseHealth.IsAlive();
         }
     }
 }

@@ -1,40 +1,25 @@
 ﻿using ru.tj.platformer.KnightAdventure.ui;
 using ru.tj.platformer.KnightAdventure.unit;
-using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.player {
-    public class PlayerHealth : IHealth {
-        private readonly int maxHealth;
-        private int currentHealth;
-        private bool alive;
-        private HealthPanel healthPanel;
+    public class PlayerHealth : BaseHealth {
+        private readonly HealthPanel healthPanel;
 
-        public PlayerHealth(int maxHealth, int currentHealth, HealthPanel healthPanel) {
-            this.maxHealth = maxHealth;
-            this.currentHealth = currentHealth;
+        public PlayerHealth(int maxHealth, int currentHealth, HealthPanel healthPanel) :
+            base(maxHealth, currentHealth) {
             this.healthPanel = healthPanel;
-            alive = true;
-            this.healthPanel.SetMaxHealth(this.maxHealth);
-            this.healthPanel.SetCurrentHealth(this.currentHealth);
+            this.healthPanel.SetMaxHealth(MaxHealth());
+            this.healthPanel.SetCurrentHealth(CurrentHealth());
         }
 
-        public int MaxHealth() {
-            return maxHealth;
+        public override void AddMaxHealth(int count) {
+            base.AddMaxHealth(count);
+            healthPanel.AddMaxHealth(count);
         }
 
-        public int CurrentHealth() {
-            return currentHealth;
-        }
-
-        public void TakeDamage(int damage) {
-            Debug.Log("Damage!!!");
-            currentHealth -= damage;
-            alive = currentHealth <= 0;
+        public override void TakeDamage(int damage) {
+            base.TakeDamage(damage);
             healthPanel.ChangeHealth(-damage);
-        }
-
-        public bool IsAlive() {
-            return alive;
         }
     }
 }

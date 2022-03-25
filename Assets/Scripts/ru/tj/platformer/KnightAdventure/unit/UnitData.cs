@@ -1,4 +1,5 @@
-﻿using ru.tj.platformer.KnightAdventure.player;
+﻿using ru.tj.platformer.KnightAdventure.constant;
+using ru.tj.platformer.KnightAdventure.player;
 using UnityEngine;
 
 namespace ru.tj.platformer.KnightAdventure.unit {
@@ -56,6 +57,14 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public void TakeDamage(int damage) {
             Health.TakeDamage(damage);
             UnitAnimation.TakeDamage();
+        }
+
+        public void TakeBonus(Bonuses bonus, int count) {
+            if (Bonuses.ChangeMaxHealth == bonus) {
+                Health.AddMaxHealth(count);
+            } else if (Bonuses.ChangeCurrentHealth == bonus) {
+                Health.TakeDamage(-count);
+            }
         }
 
 #if UNITY_EDITOR
