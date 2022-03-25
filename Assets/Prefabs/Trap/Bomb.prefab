@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3112479151262861583}
   - component: {fileID: 8814454763655620760}
   - component: {fileID: 4618297457535356793}
+  - component: {fileID: 212315856229219855}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -134,6 +135,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomPointEffector: {fileID: 738857399134276155}
+--- !u!114 &212315856229219855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112479151262861570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab89872f6e44ecb04c3409ffb09510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTags:
+  - Player
+  damagePower: 2
+  pushAfterCollisionPrefab: {fileID: 0}
 --- !u!1 &6494930402892796002
 GameObject:
   m_ObjectHideFlags: 0

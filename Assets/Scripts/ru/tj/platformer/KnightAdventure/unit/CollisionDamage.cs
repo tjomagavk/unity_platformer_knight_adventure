@@ -11,17 +11,43 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         [SerializeField] private int damagePower = 1;
         [SerializeField] private GameObject pushAfterCollisionPrefab;
 
+        private bool active = true;
+        private float nextDamageTime = 0;
+
+        private void FixedUpdate() {
+            if (!active) {
+                nextDamageTime -= Time.deltaTime;
+                if (nextDamageTime <= 0) {
+                    active = true;
+                }
+            }
+        }
+
         private void OnCollisionEnter2D(Collision2D other) {
-            bool needDamage = false;
-            foreach (string damageTag in damageTags) {
-                if (other.gameObject.CompareTag(damageTag)) {
-                    needDamage = true;
-                    break;
+            Damage(other.gameObject);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col) {
+            Damage(col.gameObject);
+        }
+
+        private bool IsNeedDamage(GameObject gObject) {
+            if (active) {
+                foreach (string damageTag in damageTags) {
+                    if (gObject.CompareTag(damageTag)) {
+                        return true;
+                    }
                 }
             }
 
-            if (needDamage) {
-                if (other.gameObject.TryGetComponent<UnitData>(out var unitData)) {
+            return false;
+        }
+
+        private void Damage(GameObject gObject) {
+            if (IsNeedDamage(gObject)) {
+                if (gObject.TryGetComponent<UnitData>(out var unitData)) {
+                    active = false;
+                    nextDamageTime = 1;
                     unitData.TakeDamage(damagePower);
                     if (pushAfterCollisionPrefab != null) {
                         GameObject push = Instantiate(pushAfterCollisionPrefab, gameObject.transform);
