@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ru.tj.platformer.KnightAdventure.unit {
+﻿namespace ru.tj.platformer.KnightAdventure.unit {
     public class BaseHealth : IHealth {
         private int maxHealth;
         private int currentHealth;
@@ -17,6 +15,7 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         public virtual void AddMaxHealth(int count) {
             maxHealth += count;
+            currentHealth += count;
         }
 
         public int CurrentHealth() {
@@ -25,7 +24,7 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         public virtual void TakeDamage(int damage) {
             currentHealth -= damage;
-            alive = currentHealth <= 0;
+            alive = currentHealth > 0;
         }
 
         public bool IsAlive() {

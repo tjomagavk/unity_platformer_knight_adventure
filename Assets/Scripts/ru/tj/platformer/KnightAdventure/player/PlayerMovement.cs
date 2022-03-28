@@ -20,11 +20,13 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         public void Move(UnitData unitData) {
-            Jump(unitData);
-            HorizontalMovement(unitData);
-            unitData.UnitAnimation.MoveParamsUpdate(grounded,
-                                                    Mathf.Abs(unitData.Rb.velocity.x),
-                                                    unitData.Rb.velocity.y);
+            if (enableMovement) {
+                Jump(unitData);
+                HorizontalMovement(unitData);
+                unitData.UnitAnimation.MoveParamsUpdate(grounded,
+                                                        Mathf.Abs(unitData.Rb.velocity.x),
+                                                        unitData.Rb.velocity.y);
+            }
         }
 
         public void EnableMovement(bool enable) {
@@ -33,7 +35,7 @@ namespace ru.tj.platformer.KnightAdventure.player {
 
         private void Jump(UnitData unitData) {
             grounded = unitData.OnGrounded();
-            if (enableMovement && playerInput.Jump()) {
+            if (playerInput.Jump()) {
                 if (grounded) {
                     unitData.Rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 }
@@ -41,21 +43,19 @@ namespace ru.tj.platformer.KnightAdventure.player {
         }
 
         private void HorizontalMovement(UnitData unitData) {
-            if (enableMovement) {
-                var moveX = playerInput.Horizontal();
-                // todo разобраться, почему не работает с addForce
-                // Vector2 movement = new Vector2(moveX, rigidbody.position.y);
-                // rigidbody.AddForce(movement * speed);
-                //
-                var movement = Vector2.zero;
-                movement.x = speedCurve.Evaluate(moveX) * speed;
-                movement.y = unitData.Rb.velocity.y;
-                unitData.Rb.velocity = movement;
-                if (moveX > 0) {
-                    unitData.FlipX(false);
-                } else if (moveX < 0) {
-                    unitData.FlipX(true);
-                }
+            var moveX = playerInput.Horizontal();
+            // todo разобраться, почему не работает с addForce
+            // Vector2 movement = new Vector2(moveX, rigidbody.position.y);
+            // rigidbody.AddForce(movement * speed);
+            //
+            var movement = Vector2.zero;
+            movement.x = speedCurve.Evaluate(moveX) * speed;
+            movement.y = unitData.Rb.velocity.y;
+            unitData.Rb.velocity = movement;
+            if (moveX > 0) {
+                unitData.FlipX(false);
+            } else if (moveX < 0) {
+                unitData.FlipX(true);
             }
         }
     }

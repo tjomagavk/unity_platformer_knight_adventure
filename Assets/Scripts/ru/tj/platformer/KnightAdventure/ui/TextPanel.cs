@@ -1,16 +1,16 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ru.tj.platformer.KnightAdventure.ui {
     public class TextPanel : MonoBehaviour {
-        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private Text text;
 
         private void Awake() {
-            text.SetText("0");
+            text.text = "0";
         }
 
         public void SetValue(int value) {
-            text.SetText(value.ToString());
+            text.text = value.ToString();
         }
     }
 }

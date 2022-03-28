@@ -5,26 +5,26 @@ namespace ru.tj.platformer.KnightAdventure {
     public class SceneController {
         private static bool isPause;
 
-        public void LoadScene(int index) {
+        public static void LoadScene(int index) {
             SceneManager.LoadScene(index);
         }
 
-        public void LoadMainMenu() {
+        public static void LoadMainMenu() {
             SceneManager.LoadScene(0);
             Play();
         }
 
-        public void LoadNextScene() {
+        public static void LoadNextScene() {
             int activeScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(activeScene + 1);
         }
 
-        public void ReloadScene() {
+        public static void ReloadScene() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Play();
         }
 
-        public void ChangePlayPause() {
+        public static void ChangePlayPause() {
             if (isPause) {
                 Time.timeScale = 1f;
             } else {
@@ -35,7 +35,7 @@ namespace ru.tj.platformer.KnightAdventure {
         }
 
 
-        private void Play() {
+        private static void Play() {
             Time.timeScale = 1f;
             isPause = false;
         }

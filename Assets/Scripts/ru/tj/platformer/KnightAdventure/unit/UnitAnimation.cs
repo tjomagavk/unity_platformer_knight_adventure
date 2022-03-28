@@ -27,5 +27,9 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public void TakeDamage() {
             animator.SetTrigger(UnitAnimationVars.DamageTrigger);
         }
+
+        public void Death() {
+            animator.SetTrigger(UnitAnimationVars.DeathTrigger);
+        }
     }
 }

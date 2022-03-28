@@ -56,7 +56,11 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         public void TakeDamage(int damage) {
             Health.TakeDamage(damage);
-            UnitAnimation.TakeDamage();
+            if (Health.IsAlive()) {
+                UnitAnimation.TakeDamage();
+            } else {
+                UnitAnimation.Death();
+            }
         }
 
         public void TakeBonus(Bonuses bonus, int count) {
@@ -65,6 +69,10 @@ namespace ru.tj.platformer.KnightAdventure.unit {
             } else if (Bonuses.ChangeCurrentHealth == bonus) {
                 Health.TakeDamage(-count);
             }
+        }
+
+        public void Destroy() {
+            Destroy(gameObject);
         }
 
 #if UNITY_EDITOR

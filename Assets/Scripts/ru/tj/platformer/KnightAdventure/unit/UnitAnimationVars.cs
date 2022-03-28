@@ -8,5 +8,6 @@
         public const string AttackTrigger = "AttackTrigger";
         public const string AttackSimple = "AttackSimple";
         public const string DamageTrigger = "DamageTrigger";
+        public const string DeathTrigger = "DeathTrigger";
     }
 }
