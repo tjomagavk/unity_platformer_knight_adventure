@@ -47,9 +47,7 @@ namespace ru.tj.platformer.KnightAdventure.ui {
                         break;
                     }
                 }
-            }
-
-            if (count > 0) {
+            } else if (count > 0) {
                 for (int i = icons.Count - 1; i >= 0; i--) {
                     if (!icons[i].IsEnable()) {
                         icons[i].Enable();

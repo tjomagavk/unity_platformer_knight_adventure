@@ -8,6 +8,7 @@ namespace ru.tj.platformer.KnightAdventure.ui {
         private bool isActive;
 
         private void Awake() {
+            isActive = true;
             image = GetComponent<Image>();
         }
 

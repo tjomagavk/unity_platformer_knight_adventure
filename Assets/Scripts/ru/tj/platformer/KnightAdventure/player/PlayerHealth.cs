@@ -1,11 +1,9 @@
 ﻿using ru.tj.platformer.KnightAdventure.ui;
 using ru.tj.platformer.KnightAdventure.unit;
-using Zenject;
 
 namespace ru.tj.platformer.KnightAdventure.player {
     public class PlayerHealth : BaseHealth {
         private readonly HealthPanel healthPanel;
-        [Inject] private IPlayerMovement playerMovement;
 
         public PlayerHealth(int maxHealth, int currentHealth, HealthPanel healthPanel) :
             base(maxHealth, currentHealth) {
