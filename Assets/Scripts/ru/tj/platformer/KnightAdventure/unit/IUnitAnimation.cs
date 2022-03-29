@@ -6,8 +6,10 @@ namespace ru.tj.platformer.KnightAdventure.unit {
 
         void SimpleAttack(bool attackLeft);
 
+        bool AttackInProgress();
+
         void TakeDamage();
-        
+
         void Death();
     }
 }

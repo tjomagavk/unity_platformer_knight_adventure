@@ -24,6 +24,10 @@ namespace ru.tj.platformer.KnightAdventure.unit {
             animator.SetBool(UnitAnimationVars.AttackLeft, attackLeft);
         }
 
+        public bool AttackInProgress() {
+            return animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
+        }
+
         public void TakeDamage() {
             animator.SetTrigger(UnitAnimationVars.DamageTrigger);
         }

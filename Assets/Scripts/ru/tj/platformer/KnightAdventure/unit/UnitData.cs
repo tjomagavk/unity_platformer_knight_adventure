@@ -11,13 +11,14 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         public Rigidbody2D Rb { get; private set; }
         public IUnitAnimation UnitAnimation { get; private set; }
         private bool attackLeft;
+        private bool attackInProgress;
 
-        [Header("Damage areas")]
-        [SerializeField]
-        private Collider2D damageArea;
+        [Header("Attacks")] [SerializeField] private DamageObject simpleAttack;
 
-        [SerializeField] private Collider2D damageAreaJump;
+        [SerializeField] private DamageObject jumpAttack;
+        [SerializeField] private DamageObject specialAttack;
 
+        private DamageObject currentAttack;
 
         [Header("Grounded checker settings")]
         [SerializeField]
@@ -30,28 +31,63 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         [SerializeField]
         private SpriteRenderer sprite;
 
+        [SerializeField] private bool destroyWithParent;
+
         private void Awake() {
             Rb = GetComponent<Rigidbody2D>();
-            groundChecker = new GroundChecker(groundPoint, groundCheckRadius, groundLayerMask);
+            if (Health == null) {
+                Health = GetComponent<IHealth>();
+            }
+
+            if (groundPoint != null) {
+                groundChecker = new GroundChecker(groundPoint, groundCheckRadius, groundLayerMask);
+            }
+
             UnitAnimation = new UnitAnimation(GetComponent<Animator>());
             attackLeft = false;
         }
 
+        private void FixedUpdate() {
+            if (attackInProgress) {
+                attackInProgress = UnitAnimation.AttackInProgress();
+                if (!attackInProgress && currentAttack != null && !currentAttack.IsRangeAttack()) {
+                    Destroy(currentAttack.gameObject);
+                }
+            }
+        }
 
         public bool OnGrounded() {
-            return groundChecker.IsGrounded();
+            if (groundChecker != null) {
+                return groundChecker.IsGrounded();
+            }
+
+            return false;
         }
 
         public void FlipX(bool flip) {
             if (sprite.flipX != flip) {
                 sprite.flipX = flip;
+                if (currentAttack != null) {
+                    currentAttack.FlipX(sprite.flipX);
+                }
+
                 UnitAnimation.ChangeDirection();
             }
         }
 
         public void SimpleAttack() {
-            UnitAnimation.SimpleAttack(attackLeft);
-            attackLeft = !attackLeft;
+            if (!attackInProgress) {
+                attackInProgress = true;
+                if (OnGrounded()) {
+                    currentAttack = Instantiate(simpleAttack, gameObject.transform, false);
+                } else {
+                    currentAttack = Instantiate(jumpAttack, gameObject.transform, false);
+                }
+
+                currentAttack.Run(sprite.flipX);
+                UnitAnimation.SimpleAttack(attackLeft);
+                attackLeft = !attackLeft;
+            }
         }
 
         public void TakeDamage(int damage) {
@@ -72,7 +108,11 @@ namespace ru.tj.platformer.KnightAdventure.unit {
         }
 
         public void Destroy() {
-            Destroy(gameObject);
+            if (destroyWithParent) {
+                Destroy(gameObject.transform.parent.gameObject);
+            } else {
+                Destroy(gameObject);
+            }
         }
 
 #if UNITY_EDITOR
